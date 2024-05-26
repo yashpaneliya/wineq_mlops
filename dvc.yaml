@@ -15,3 +15,19 @@ stages:
     outs:
     - data/processed/train_wine.csv
     - data/processed/test_wine.csv
+  train_and_evaluate:
+    cmd: python src/train_and_eval.py --config=params.yaml
+    deps:
+    - data/processed/train_wine.csv
+    - data/processed/test_wine.csv
+    - src/train_and_eval.py
+    params:
+    - estimators.ElasticNet.params.alpha
+    - estimators.ElasticNet.params.l1_ratio
+    metrics:
+    - reports/scores.json:
+        cache: false
+    - reports/params.json:
+        cache: false
+    outs:
+    - saved_models/model.joblib
