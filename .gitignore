@@ -1,2 +1,4 @@
 /wineenv
 *.csv
+/tests/__pycache__
+/src/__pycache__
