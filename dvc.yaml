@@ -24,10 +24,14 @@ stages:
     params:
     - estimators.ElasticNet.params.alpha
     - estimators.ElasticNet.params.l1_ratio
-    metrics:
-    - reports/scores.json:
-        cache: false
-    - reports/params.json:
-        cache: false
-    outs:
-    - saved_models/model.joblib
+    # metrics:
+    # - reports/scores.json:
+    #     cache: false
+    # - reports/params.json:
+    #     cache: false
+    # outs:
+    # - saved_models/model.joblib
+  # log_production_model:
+  #   cmd: python src/log_prod_model.py --config=params.yaml
+  #   deps:
+  #   - src/log_prod_model.py
