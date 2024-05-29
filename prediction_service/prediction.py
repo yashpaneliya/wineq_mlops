@@ -83,5 +83,5 @@ def api_response(req_dict):
             res = {"response": res}
             return res
     except Exception as e:
-        res = {"expected_range": get_schema(), "response": str(e)}
+        res = {"expected_range": get_schema(schema_path), "response": str(e)}
         return res
